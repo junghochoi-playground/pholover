@@ -40,13 +40,21 @@ const Navbar = () => {
                 </Box>
 
                 <Box mx={2}>
-                    <Text fontSize={20} fontFamily={'LifeSaver'}>
+                    <Text
+                        fontSize={20}
+                        fontWeight={'bolder'}
+                        fontFamily={'LifeSaver'}
+                    >
                         Home
                     </Text>
                 </Box>
 
                 <Box mx={2}>
-                    <Text fontSize={20} fontFamily={'LifeSaver'}>
+                    <Text
+                        fontSize={20}
+                        fontWeight={'bolder'}
+                        fontFamily={'LifeSaver'}
+                    >
                         About
                     </Text>
                 </Box>
