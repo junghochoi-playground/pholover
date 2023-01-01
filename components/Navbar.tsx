@@ -1,81 +1,62 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import {
+    Flex,
+    Spacer,
+    Box,
+    Text,
+    Image,
+    HStack,
+    Heading,
+} from '@chakra-ui/react'
+import { useTheme } from '@chakra-ui/react'
 
-import LogoIcon from "../assets/pictures/logo_icon.png";
-import InstagramIcon from "../assets/icons/instagram_icon.svg";
+import LogoIcon from '../assets/pictures/logo_icon.png'
+import InstagramIcon from '../assets/icons/instagram_icon.svg'
 
-import styles from "../styles/components/Navbar.module.css";
-import { backdropClasses } from "@mui/material";
+const Navbar = () => {
+    const theme = useTheme()
 
-export default function Navbar() {
-  return (
-    <Box sx={{ flexGrow: 1, fontFamily: "LifeSaver" }}>
-      <AppBar className={styles.navbar} position="static" color="primary">
-        <Toolbar>
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            sx={{ minHeight: 80, padding: 1, flexGrow: 1 }}
-          >
-            <Box
-              component="img"
-              sx={{
-                height: 75,
-                width: 75,
-              }}
-              alt="The house from the offer."
-              src={LogoIcon.src}
-            />
-            <Typography variant="h4" sx={{ fontFamily: "LifeSaver" }}>
-              Pho Lover
-            </Typography>
-          </Box>
+    return (
+        <Flex
+            direction={'row'}
+            justifyContent={'space-between'}
+            backgroundColor={'brand.yellow'}
+            h={'12vh'}
+        >
+            <HStack p={4}>
+                <Image src={LogoIcon.src} boxSize={70} />
+                <Heading as={'h4'}>Pho Lover</Heading>
+            </HStack>
 
-          <Box
-            sx={{
-              background: "black",
-              color: "white",
-              paddingX: 2,
-              paddingY: 1,
-              borderRadius: 20,
-            }}
-          >
-            <Typography className={styles.links}>View the Menu</Typography>
-          </Box>
+            <HStack p={4} spacing={6}>
+                <Box backgroundColor={'black'} px={4} py={1} borderRadius={50}>
+                    <Text
+                        fontSize={20}
+                        fontFamily={'LifeSaver'}
+                        fontWeight={900}
+                        color={'white'}
+                    >
+                        View the Menu
+                    </Text>
+                </Box>
 
-          <Box
-            sx={{
-              paddingX: 2,
-              paddingY: 1,
-            }}
-          >
-            <Typography className={styles.links}>Home</Typography>
-          </Box>
+                <Box mx={2}>
+                    <Text fontSize={20} fontFamily={'LifeSaver'}>
+                        Home
+                    </Text>
+                </Box>
 
-          <Box
-            sx={{
-              paddingX: 2,
-              paddingY: 1,
-            }}
-          >
-            <Typography className={styles.links}>About</Typography>
-          </Box>
+                <Box mx={2}>
+                    <Text fontSize={20} fontFamily={'LifeSaver'}>
+                        About
+                    </Text>
+                </Box>
 
-          {/* <Typography>Instagram</Typography> */}
-
-          <Box 
-            sx={{
-              height: 50,
-              width: 50,
-            }}
-            component="img" src={InstagramIcon.src} />
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
+                <Box mx={2}>
+                    <Image src={InstagramIcon.src} boxSize={10} />
+                </Box>
+            </HStack>
+        </Flex>
+    )
 }
+
+export default Navbar

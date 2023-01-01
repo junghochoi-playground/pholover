@@ -1,25 +1,19 @@
-import { Box, Container } from "@mui/system";
-import { Navbar } from "../components";
+import { Container, Box } from '@chakra-ui/react'
+
+import Navbar from '../components/Navbar'
 import bg from '../assets/pictures/bg.png'
 
-export default function Test() {
+const Test = () => {
     return (
-        <div>
-            <Navbar />  
-
+        <>
+            <Navbar />
             <Box
-                sx={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundSize: 'cover'
-                }}
-            >
-
-                <Container>
-
-                </Container>
-
-            </Box>
-    
-        </div>
+                backgroundColor={'rgba(0,0,0,1)'}
+                backgroundImage={bg.src}
+                h={'88vh'}
+            ></Box>
+        </>
     )
-}  
+}
+
+export default Test
