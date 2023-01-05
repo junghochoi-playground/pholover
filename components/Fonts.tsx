@@ -1,7 +1,8 @@
 import { Global } from '@emotion/react'
-export const Fonts = () => (
+const Fonts = () => (
     <Global
         styles={`
+        
             @font-face {
                 font-family: "LifeSaver";
                 src: url(../assets/fonts/LifeSavers-Regular.ttf);
@@ -22,6 +23,15 @@ export const Fonts = () => (
                 font-weight: 900;
                 font-style: normal;
             }
+
         `}
     />
 )
+
+export default Fonts
+
+/*
+
+
+
+            */
